@@ -21206,7 +21206,7 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(VueScrollTo, {
   y: true
 });
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_github_api__WEBPACK_IMPORTED_MODULE_3___default.a, {
-  token: 'd700009f8d9b0c8014352b995250d590f4d70fa1'
+  token: ''
 });
 var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
   mode: 'history',

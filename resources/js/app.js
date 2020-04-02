@@ -29,7 +29,7 @@ Vue.use(
     }
 );
 
-Vue.use(GitHubAPI, {token: 'd700009f8d9b0c8014352b995250d590f4d70fa1'});
+Vue.use(GitHubAPI, {token: ''});
 
 const router = new VueRouter(
     {
