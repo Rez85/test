@@ -1,5 +1,6 @@
 <?php
 
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -14,6 +15,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+Route::middleware('auth:api')->get(
+    '/user',
+    static function (Request $request) {
+        return $request->user();
+    }
+);
+
+Route::namespace('Api')->group(
+    static function () {
+        Route::get('/users', 'UsersController@index');
+        Route::get('/users/{user}', 'UsersController@show');
+    }
+);

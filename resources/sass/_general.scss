@@ -1,0 +1,32 @@
+// Elements
+.pagination {
+    font-size: 16px;
+}
+
+.list-group-item-action {
+    &:hover,
+    &:focus {
+        background-color: $list-hover;
+    }
+}
+
+.user-repo-list {
+    .list-group-item-action {
+        cursor: pointer;
+    }
+}
+
+.user-repo-commit-list {
+    min-height: 100vh;
+}
+
+li {
+    list-style: none;
+    line-height: 1.5em;
+    margin-bottom: 20px;
+}
+
+.author,
+.date {
+    font-weight: bold;
+}
