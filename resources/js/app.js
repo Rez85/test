@@ -1,3 +1,4 @@
+require('./bootstrap');
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import VueResource from 'vue-resource'
@@ -29,7 +30,7 @@ Vue.use(
     }
 );
 
-Vue.use(GitHubAPI, {token: ''});
+Vue.use(GitHubAPI, {token: 'your-github-access-token-here'});
 
 const router = new VueRouter(
     {

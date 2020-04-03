@@ -18,6 +18,38 @@
 
 .user-repo-commit-list {
     min-height: 100vh;
+
+    .list-group-item-action {
+        background-color: $list-commit-bg;
+        cursor: pointer;
+
+        &:hover,
+        &:focus {
+            background-color: $list-hover;
+        }
+    }
+
+    .author {
+        a {
+            cursor: pointer;
+        }
+    }
+}
+
+.avatar {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: middle;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    line-height: 1;
+
+    img {
+        border-style: none;
+    }
 }
 
 li {
@@ -29,4 +61,13 @@ li {
 .author,
 .date {
     font-weight: bold;
+}
+
+h6 {
+    margin-bottom: 0;
+}
+
+hr {
+    margin-top: 10px;
+    margin-bottom: 15px;
 }

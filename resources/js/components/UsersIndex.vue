@@ -38,7 +38,17 @@
                                     <span class="badge badge-secondary badge-pill">{{ repo.watchers_count }}</span>
                                 </small>
                             </div>
-                            <p class="text-left mt-2 mb-2">{{ repo.description }}</p>
+                            <hr/>
+                            <p v-if="repo.description" class="text-left mt-2 mb-2">
+                                {{ repo.description }}
+                            </p>
+                            <small v-if="repo.owner" class="d-block text-left mt-1 mb-2">
+                                <img v-bind:src="repo.owner.avatar_url" alt="GitHub Avatar" class="avatar">
+                                <span class="author">
+                                by <a :href="repo.owner.html_url" target="_blank">
+                                {{ repo.owner.login }}</a>
+                            </span> updated at <span class="date">{{ repo.updated_at | formatDate }}</span>
+                            </small>
                         </a>
                     </div>
                 </div>
@@ -52,17 +62,25 @@
                 <div v-if="processedCommits" class="list-group list-group-flush user-repo-commit-list mb-5">
                     <a v-for="record in processedCommits"
                        :href="record.html_url" target="_blank"
-                       class="list-group-item list-group-item-action flex-column align-items-start commit">
+                       class="list-group-item list-group-item-action flex-column align-items-start mb-1 commit">
                         <div class="d-flex w-100 justify-content-between">
-                            <h5 class="mb-1">{{ record.commit.message | truncate }}</h5>
+                            <h6 class="mt-1">{{ record.commit.message | truncate }}</h6>
                             <small>
                                 <span class="badge badge-pill badge-light">{{ record.sha.slice(0, 7) }}</span>
                             </small>
                         </div>
-                        <small class="d-block text-left">
+                        <hr/>
+                        <small v-if="record.author" class="d-block text-left mb-2">
+                            <img v-bind:src="record.author.avatar_url" alt="GitHub Avatar" class="avatar">
                             <span class="author">
-                                by {{ record.commit.author.name }}
-                            </span> at <span class="date">{{ record.commit.author.date | formatDate }}</span>
+                                committed by <a :href="record.author.html_url" target="_blank">
+                                {{ record.commit.author.name }}</a>
+                            </span> on <span class="date">{{ record.commit.author.date | formatDate }}</span>
+                        </small>
+                        <small v-else class="d-block text-left">
+                            <span class="author">
+                                committed by {{ record.commit.author.name }}
+                            </span> on <span class="date">{{ record.commit.author.date | formatDate }}</span>
                         </small>
                     </a>
                 </div>

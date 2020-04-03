@@ -10899,6 +10899,34 @@ a.text-dark:focus {
   min-height: 100vh;
 }
 
+.user-repo-commit-list .list-group-item-action {
+  background-color: #f5feff;
+  cursor: pointer;
+}
+
+.user-repo-commit-list .list-group-item-action:hover,
+.user-repo-commit-list .list-group-item-action:focus {
+  background-color: #f1f7ff;
+}
+
+.user-repo-commit-list .author a {
+  cursor: pointer;
+}
+
+.avatar {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: middle;
+  border-radius: 2px;
+  line-height: 1;
+}
+
+.avatar img {
+  border-style: none;
+}
+
 li {
   list-style: none;
   line-height: 1.5em;
@@ -10908,5 +10936,14 @@ li {
 .author,
 .date {
   font-weight: bold;
+}
+
+h6 {
+  margin-bottom: 0;
+}
+
+hr {
+  margin-top: 10px;
+  margin-bottom: 15px;
 }
 
